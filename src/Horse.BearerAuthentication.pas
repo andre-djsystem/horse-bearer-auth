@@ -93,7 +93,7 @@ begin
   LPathInfo := Req.RawWebRequest.PathInfo;
   if LPathInfo = EmptyStr then
     LPathInfo := '/';
-  if MatchText(LPathInfo, Config.SkipRoutes) then
+  if MatchRoute(LPathInfo, Config.SkipRoutes) then
   begin
     Next();
     Exit;
